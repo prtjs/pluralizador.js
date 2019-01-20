@@ -65,7 +65,7 @@ Um substantivo português qualquer para ser pluralizado.
 
 #### `count`
 
-> *number* (opcional)
+*number* (opcional)
 
 Uma quantidade desse substantivo para verificar se deve pluralizar ou não.
 
