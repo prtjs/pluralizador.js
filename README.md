@@ -32,10 +32,10 @@ pluralize('coração', 1);
 pluralize('coração', 2);
 //=> 'corações'
 
-pluralize('pastel', 743)
+pluralize('pastel', 743);
 //=> 'pastéis'
 
-pluralize('português', 42)
+pluralize('português', 42);
 //=> 'potugueses'
 ```
 
