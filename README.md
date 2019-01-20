@@ -18,8 +18,13 @@ para rodá-lo no navegador.
 
 ## Uso
 
+Veja alguns exemplos:
+
 ```js
 var pluralize = require('pluralizador');
+
+pluralize('coração');
+//=> 'corações'
 
 pluralize('coração', 1);
 //=> 'coração'
@@ -33,6 +38,36 @@ pluralize('pastel', 743)
 pluralize('português', 42)
 //=> 'potugueses'
 ```
+
+### Exemplo de possível uso
+
+```js
+var fs = require('fs');
+var pluralize = require('./');
+
+fs.readdir('./', (err, files) => {
+  console.log(`Há ${files.length} ${pluralize('arquivo', files.length)}.`);
+
+  // Retorna 'Há 1 arquivo', se tiver 1 arquivo.
+  // Retorna 'Há 2 arquivos', se tiver 2 arquivos.
+});
+```
+
+## API
+
+### `pluralize(word [, count])`
+
+#### `word`
+
+*string* (obrigatório)
+
+Um substantivo português qualquer para ser pluralizado.
+
+#### `count`
+
+> *number* (opcional)
+
+Uma quantidade desse substantivo para verificar se deve pluralizar ou não.
 
 ## Observações
 

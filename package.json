@@ -2,7 +2,7 @@
   "name": "pluralizador",
   "version": "0.0.0",
   "description": "Pluralizador de substantivos da língua portuguesa.",
-  "main": "dist/index.js",
+  "main": "./index.js",
   "umd:main": "dist/index.umd.js",
   "scripts": {
     "test": "node test.js"
