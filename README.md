@@ -1,5 +1,7 @@
 # Pluralizador.js
 
+![Status](https://travis-ci.org/theuves/pluralizador.js.svg?branch=master)
+
 > Um pluralizador de substantivos da língua portuguesa.
 
 ## Instalação
