@@ -88,8 +88,7 @@ você conjugue verbos da língua portuguesa.
 
 ## TODO
 
-- [ ] Adicionar opção para escolher plural de palavras terminadas em /-ão/ e
-que aceitam mais de uma forma de escrita.
+- [ ] Opção para escolher plural de palavras terminadas em /-ão/.
 
 ## Licença
 
