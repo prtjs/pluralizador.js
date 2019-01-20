@@ -1,6 +1,6 @@
 {
   "name": "pluralizador",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Um pluralizador de substantivos da língua portuguesa.",
   "main": "./index.js",
   "scripts": {
