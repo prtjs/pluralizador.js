@@ -10,7 +10,7 @@ Instale-o com *npm*:
 npm install --save pluralizador
 ```
 
-...ou com [Yarn](https://yarnpkg.com/) se quiser:
+...ou com [Yarn](https://yarnpkg.com/):
 
 ```
 yarn add pluralizador
