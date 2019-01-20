@@ -1,4 +1,4 @@
-# Pluralizador
+# Pluralizador.js
 
 > Pluralizador de substantivos da língua portuguesa.
 
