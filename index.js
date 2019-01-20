@@ -37,6 +37,9 @@ var irregulars = {
  * @returns {string} A mesma palavra no plural.
  */
 module.exports = function (word, count) {
+  if (!word || typeof word !== 'string') {
+    return word;
+  }
   if (count === 1) {
     return word;
   }

@@ -1,0 +1,15 @@
+{
+  "name": "pluralizador",
+  "version": "0.0.0",
+  "description": "Pluralizador de substantivos da língua portuguesa.",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Matheus Alves",
+  "license": "MIT",
+  "dependencies": {
+    "theuves-test": "^1.0.2"
+  }
+}
