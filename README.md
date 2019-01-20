@@ -48,8 +48,8 @@ var pluralize = require('./');
 fs.readdir('./', (err, files) => {
   console.log(`Há ${files.length} ${pluralize('arquivo', files.length)}.`);
 
-  // Retorna 'Há 1 arquivo', se tiver 1 arquivo.
-  // Retorna 'Há 2 arquivos', se tiver 2 arquivos.
+  // Retorna 'Há 1 arquivo.', se tiver 1 arquivo.
+  // Retorna 'Há 2 arquivos.', se tiver 2 arquivos.
 });
 ```
 
