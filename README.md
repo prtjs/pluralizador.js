@@ -43,7 +43,7 @@ pluralize('português', 42);
 
 ```js
 var fs = require('fs');
-var pluralize = require('./');
+var pluralize = require('pluralizador');
 
 fs.readdir('./', (err, files) => {
   console.log(`Há ${files.length} ${pluralize('arquivo', files.length)}.`);
