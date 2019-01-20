@@ -1,6 +1,6 @@
 # Pluralizador.js
 
-> Pluralizador de substantivos da língua portuguesa.
+> Um pluralizador de substantivos da língua portuguesa.
 
 ## Instalação
 

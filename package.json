@@ -1,7 +1,7 @@
 {
   "name": "pluralizador",
   "version": "0.0.0",
-  "description": "Pluralizador de substantivos da língua portuguesa.",
+  "description": "Um pluralizador de substantivos da língua portuguesa.",
   "main": "./index.js",
   "scripts": {
     "test": "node test.js"
