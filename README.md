@@ -10,10 +10,11 @@ Instale-o com *npm*:
 npm install --save pluralizador
 ```
 
-...ou com [Yarn](https://yarnpkg.com/) se quiser.
+...ou com [Yarn](https://yarnpkg.com/) se quiser:
 
-...ou baixe-o [aqui](https://github.com/theuves/pluralizador.js/archive/master.zip)
-para rodá-lo no navegador.
+```
+yarn add pluralizador
+```
 
 
 ## Uso
