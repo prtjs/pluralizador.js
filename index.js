@@ -28,7 +28,6 @@ var irregulars = {
   ]
 };
 
-
 /**
  * Pluralizar substantivos da língua portuguesa.
  *
@@ -37,11 +36,8 @@ var irregulars = {
  * @returns {string} A mesma palavra no plural.
  */
 module.exports = function (word, count) {
-  if (!word || typeof word !== 'string') {
-    return word;
-  }
-  if (count === 1) {
-    return word;
+  if (!word || typeof word !== 'string' || count === 1) {
+    return word
   }
 
   // Se a palavra terminar em -r, -s ou -z, será adicionado -es.
