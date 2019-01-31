@@ -79,7 +79,12 @@ Uma quantidade desse substantivo para verificar se deve pluralizar ou não.
 A língua portuguesa é extremamente irregular e consequentemente há algumas
 dificuldades para um algoritmo manipular palavras, sentenças, etc. No caso das
 palavras terminadas em /-ão/, não há uma regra geral para a pluralização, pois
-isso varia de acordo com a etimologia da palavra.
+isso varia de acordo com a etimologia da palavra. Desse modo, essa ferramenta
+se beneficia duma lista predefinida dos substantivos mais irregulares,
+portanto, esteja ciente que nesses casos a pluralização está sujeita a erros
+(no entanto, isso é bem pouco provável de ocorrer).
+
+Sinta-se livre para aumentar a lista enviando um *Pull Request*.
 
 **Obs. II**:
 
