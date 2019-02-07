@@ -39,7 +39,7 @@ pluralize('pastel', 743);
 //=> 'pastéis'
 
 pluralize('português', 42);
-//=> 'potugueses'
+//=> 'portugueses'
 ```
 
 ### Exemplo de possível uso
