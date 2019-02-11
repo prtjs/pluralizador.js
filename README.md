@@ -91,7 +91,7 @@ Sinta-se livre para aumentar a lista enviando um *Pull Request*.
 Essa ferramenta só pluraliza substantivos. Se você deseja pluralizar um verbo
 (por exemplo: de *amei* para *amaram*, de *amarei* para *amarão*, ou qualquer
 coisa do gênero), então você pode usar uma outra ferramenta, como o
-[*Conjugador.js*](https://github.com/theuves/conjugador.js) que permite que
+[*Conjugador.js*](https://github.com/theuves/conjugador) que permite que
 você conjugue verbos da língua portuguesa.
 
 ## TODO
