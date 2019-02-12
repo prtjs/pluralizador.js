@@ -28,7 +28,11 @@ var irregulars = {
   ]
 };
 
-var seteExcecoes = ['mal', 'cônsul', 'mel', 'fel', 'cal', 'aval', 'mol'];
+/**
+ * Há sete exceções de palavras terminadas em -l.
+ * Referência: <https://pt.wikipedia.org/wiki/Plural#Regras_especiais>.
+ */
+var sevenExceptions = ['mal', 'cônsul', 'mel', 'fel', 'cal', 'aval', 'mol'];
 
 /**
  * Pluralizar substantivos da língua portuguesa.
@@ -71,6 +75,11 @@ module.exports = function (word, count) {
 
   // Para as palavras terminadas em -l, troca-se-a por -is.
   if (/l$/.test(word)) {
+    // Para palavras que se encaixem numa das sete exceções.
+    if (sevenExceptions.indexOf(word) !== -1) {
+      return `${word}es`;
+    }
+
     var radical = word.substr(0, word.length - 1);
 
     // Para checar se a palavra é oxítona será verificado
@@ -102,13 +111,6 @@ module.exports = function (word, count) {
         case 'ul':
           return word.replace(/ul$/, 'uis');
       }
-    }
-
-    // Os substantivos terminados por al, el, ol, ul, troca-se o l por is.
-    // Entretanto há as chamadas "sete exceções", que fazem o plural em es.
-    // Referência: https://pt.wikipedia.org/wiki/Plural#Regras_especiais
-    if (seteExcecoes.indexOf(word) !== -1) {
-      return `${word}es`;
     }
 
     return word.replace(/l$/, 'is');
