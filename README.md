@@ -1,6 +1,7 @@
 # Pluralizador.js
 
-![Status](https://travis-ci.org/theuves/pluralizador.js.svg?branch=master)
+[![Status](https://travis-ci.org/theuves/pluralizador.js.svg?branch=master)](https://travis-ci.org/theuves/pluralizador.js)
+[![Doar](https://img.shields.io/badge/paypal-doar-179bd7.svg?logo=paypal&style=flat&logoColor=blue)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3WZ447WCJ54XG&source=url)
 
 > Um pluralizador de substantivos da língua portuguesa.
 
