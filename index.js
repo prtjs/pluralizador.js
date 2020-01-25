@@ -27,7 +27,7 @@ return function (word, count) {
 function suffixRSZ(word) {
     /*
      * EXCEÇÃO:
-     *     Se a palavra for uma oxítona terminada em /ês/, /és/ ou /is/
+     *     Se a palavra for uma oxítona terminada em /ês/, /és/ ou /ís/
      *     ela automaticamente deixará de sê-la e se tornará um paroxítona
      */
     const RE_SPECIAL_OXYTONIC = /[êéí]s$/;
