@@ -20,7 +20,7 @@ return function (word, count) {
 
 /*
  * DESCRIÇÃO:
- *     Pluralizar palavraS terminada em /-r/, /-s/ ou /-z/
+ *     Pluralizar palavras terminada em /-r/, /-s/ ou /-z/
  * REGRA:
  *     Acrescentar /-es/ ao final
  */
