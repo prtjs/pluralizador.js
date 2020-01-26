@@ -1,11 +1,12 @@
-'use strict';
+"use strict";
 module.exports = (function () {
+/**/
 
 const RE_ACCENTS = /[áâéêôóí]/;
-const RE_VOWELS = /[aeiou]/;
+const RE_VOWELS  = /[aeiou]/;
 
 return function (word, count) {
-    if (!word || typeof word !== 'string' || count === 1) {
+    if (!word || typeof word !== "string" || count === 1) {
         return word;
     }
 
@@ -15,20 +16,20 @@ return function (word, count) {
     if (/x$/.test(word)) return suffixX(word);
     if (/ão$/.test(word)) return suffixAo(word);
 
-    return word + 's' ;
+    return word + "s" ;
 }
 
 /*
  * DESCRIÇÃO:
- *     Pluralizar palavras terminada em /-r/, /-s/ ou /-z/
+ *   Pluralizar palavras terminada em /-r/, /-s/ ou /-z/.
  * REGRA:
- *     Acrescentar /-es/ ao final
+ *   Acrescentar /-es/ ao final.
  */
 function suffixRSZ(word) {
     /*
      * EXCEÇÃO:
-     *     Se a palavra for uma oxítona terminada em /ês/, /és/ ou /ís/
-     *     ela automaticamente deixará de sê-la e se tornará um paroxítona
+     *   Se a palavra for uma oxítona terminada em /ês/, /és/ ou /ís/
+     *   ela automaticamente deixará de sê-la e se tornará um paroxítona.
      */
     const RE_SPECIAL_OXYTONIC = /[êéí]s$/;
     if (RE_SPECIAL_OXYTONIC.test(word)) {
@@ -36,18 +37,18 @@ function suffixRSZ(word) {
 
             // Checar somente a vogal
             switch (suffix[0]) {
-                case 'ê':
-                case 'é':
-                    return 'eses';
-                case 'í':
-                    return 'ises';
+                case "ê":
+                case "é":
+                    return "eses";
+                case "í":
+                    return "ises";
             }
         });
     }
 
     /*
      * EXCEÇÃO:
-     *     Se a palavra terminar em /-s/ e NÃO for oxítona então ela não muda
+     *   Se a palavra terminar em /-s/ e NÃO for oxítona então ela não muda.
      */
     const wordEndWithS = /s$/.test(word)
     const wordIsOxytonic = /[áãâêéí]s$/.test(word)
@@ -55,92 +56,92 @@ function suffixRSZ(word) {
         return word;
     }
 
-    return word + 'es';
+    return word + "es";
 }
 
 /*
  * DESCRIÇÃO:
- *     Pluralizar palavras terminadas em /-l/
+ *   Pluralizar palavras terminadas em /-l/.
  * REGRA:
- *     Trocar /-l/ por /-is/
+ *   Trocar /-l/ por /-is/.
  */
 function suffixL(word) {
     /*
      * EXCEÇÃO:
-     *     De acordo com a Wikipédia [1] há "sete exceções" que fazem o plural /-es/
+     *   De acordo com a Wikipédia [1] há "sete exceções" que fazem o plural /-es/.
      * FONTE:
-     *     [1] https://pt.wikipedia.org/wiki/Plural#Regras_especiais
+     *   [1] https://pt.wikipedia.org/wiki/Plural#Regras_especiais
      */
     const LIST_SETE_EXCECOES = [
-        'aval',
-        'cal',
-        'cônsul',
-        'fel',
-        'mal',
-        'mel',
-        'mol',
+        "aval",
+        "cal",
+        "cônsul",
+        "fel",
+        "mal",
+        "mel",
+        "mol",
     ];
     if (LIST_SETE_EXCECOES.indexOf(word) !== -1) {
-        return word + 'es';
+        return word + "es";
     }
 
     /*
      * EXCEÇÃO:
-     *     Se a palavra terminar em /-il/ e for uma oxítona (ou monossílaba),
-     *     então esse sufixo será trocado por /-is/, caso contrário ele será
-     *     trocado por /-eis/
+     *   Se a palavra terminar em /-il/ e for uma oxítona (ou monossílaba),
+     *   então esse sufixo será trocado por /-is/, caso contrário ele será
+     *   trocado por /-eis/.
      * EXEMPLOS:
-     *     1) fuzil -> fuzis     [ oxítona ]
-     *     2) fóssil -> fósseis  [ paroxítona ]
+     *   - fuzil  -> fuzis    [ oxítona ]
+     *   - fóssil -> fósseis  [ paroxítona ]
      */
     if (/il$/.test(word)) {
 
         // Se houver acentuação, então a palavra será automaticamente entendida
-        // como NÃO sendo uma oxítona (ou monossílaba)
+        // como NÃO sendo uma oxítona (ou monossílaba).
         if (RE_ACCENTS.test(word)) {
-            return word.replace(/il$/, 'eis');
+            return word.replace(/il$/, "eis");
         }
 
-        return word.replaces(/l$/, 's');
+        return word.replaces(/l$/, "s");
     }
 
     /*
      * EXCEÇÃO:
-     *     Se a palavra for oxítnona terminada em /-el/, /-ol/ ou /-ul/, então
-     *     deve-se trocar o /-l/ por /-is/ e acentuar os casos que exigidos
-     *     pela norma da lingua (/-éis/ e /-óis/)
+     *   Se a palavra for oxítnona terminada em /-el/, /-ol/ ou /-ul/, então
+     *   deve-se trocar o /-l/ por /-is/ e acentuar os casos que exigidos
+     *   pela norma da lingua (/-éis/ e /-óis/).
      */
     if (!RE_ACCENTS.test(word)) { // Sem acento -> oxítona
         const suffix = word.substr(-2);
 
         switch (suffix) {
-            case 'el':
-              return word.replace(/el$/, 'éis');
-            case 'ol':
-              return word.replace(/ol$/, 'óis');
-            case 'ul':
-              return word.replace(/ul$/, 'uis');
+            case "el":
+              return word.replace(/el$/, "éis");
+            case "ol":
+              return word.replace(/ol$/, "óis");
+            case "ul":
+              return word.replace(/ul$/, "uis");
         }
     }
 
-    return word.replace(/l$/, 'is');
+    return word.replace(/l$/, "is");
 }
 
 /*
  * DESCRIÇÃO:
- *     Pluralizar palavras terminadas em /-m/
+ *   Pluralizar palavras terminadas em /-m/.
  * REGRA:
- *     Trocar /-m/ por /-ns/
+ *   Trocar /-m/ por /-ns/.
  */
 function suffixM(word) {
-    return word.replace(/m$/, 'ns');
+    return word.replace(/m$/, "ns");
 }
 
 /*
  * DESCRIÇÃO:
- *     Pluralizar palavras terminadas em /-x/
+ *   Pluralizar palavras terminadas em /-x/.
  * REGRA:
- *     Nãa fazer alterações
+ *   Nãa fazer alterações.
  */
 function suffixX(word) {
     return word;
@@ -148,59 +149,60 @@ function suffixX(word) {
 
 /*
  * DESCRIÇÃO:
- *     Pluralizar palavras terminadas em /-ão/
+ *   Pluralizar palavras terminadas em /-ão/.
  * REGRA:
- *     Trocar /-ão/ por /-ões/
+ *   Trocar /-ão/ por /-ões/.
  */
 function suffixAo(word) {
     /*
      * EXCEÇÃO:
-     *     Algumas palavras deverão terminar em /-ães/ sem explicações lógicas,
-     *     devendo apenas à motivos etmológicos
+     *   Algumas palavras deverão terminar em /-ães/ sem explicações lógicas,
+     *   devendo apenas à motivos etmológicos.
      */
     const IRREGULARS_AES = [
-        'alemão',
-        'capelão',
-        'capitão',
-        'catalão',
-        'charlatão',
-        'cirurgião',
-        'cão',
-        'escrivão',
-        'guardião',
-        'mamão',
-        'pão',
-        'sacristão',
-        'tabelião',
+        "alemão",
+        "capelão",
+        "capitão",
+        "catalão",
+        "charlatão",
+        "cirurgião",
+        "cão",
+        "escrivão",
+        "guardião",
+        "mamão",
+        "pão",
+        "sacristão",
+        "tabelião",
     ];
     if (IRREGULARS_AES.indexOf(word) !== -1) {
-        return word.replace(/ão$/, 'ães');
+        return word.replace(/ão$/, "ães");
     }
 
     /*
      * EXCEÇÃO:
-     *     Terminará em /-ãos/ se não for oxítona ou se for monossílaba
+     *   Terminará em /-ãos/ se não for oxítona ou se for monossílaba.
      */
-    const radical = word.replace(/ão$/, '');
+    const radical = word.replace(/ão$/, "");
     const wordIsOxytonic = !RE_ACCENTS.test(radical);
     const wordIsMonosyllable = !RE_VOWELS.test(radical);
     if (!wordIsOxytonic || wordIsMonosyllable) {
-        return word + 's';
+        return word + "s";
     }
 
     /*
      * EXCEÇÃO:
-     *     Algumas palavras terminam em /-ãos/ sem explicações lógicas
+     *   Algumas palavras terminam em /-ãos/ sem explicações lógicas.
      */
     const IRREGULARS_AOS = [
-        'cidadão',
-        'cristão',
+        "cidadão",
+        "cristão",
     ];
     if (IRREGULARS_AOS.indexOf(word) !== -1) {
-        return word + 's';
+        return word + "s";
     }
 
-    return word.replace(/ão$/, 'ões');
+    return word.replace(/ão$/, "ões");
 }
 
+/**/
 })();
