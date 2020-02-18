@@ -25,7 +25,7 @@ class Pluralizer {
     /**
      * Pluralizar plavra com base nas configurações.
      */
-    pluralize(noun, count) {
+    pluralizeWord(noun, count) {
         if (count < 2) return word;
 
         for (let rule of this.rules) {
