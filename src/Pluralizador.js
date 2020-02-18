@@ -1,4 +1,6 @@
-module.exports = class Pluralizer {
+'use strict';
+
+class Pluralizer {
     constructor() {
         this.configurations = [];
     }
@@ -37,3 +39,5 @@ module.exports = class Pluralizer {
         return word + 's';
     }
 }
+
+module.exports = Pluralizer;
