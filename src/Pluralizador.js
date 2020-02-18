@@ -25,7 +25,7 @@ module.exports = class Pluralizer {
      */
     pluralize(noun) {
         for (configuration of this.configurations) {
-            const match = configuration.suffixes.some(function (suffix) {
+            const match = configuration.suffixes.some((suffix) => {
                 return noun.endsWith(suffix);
             });
 
