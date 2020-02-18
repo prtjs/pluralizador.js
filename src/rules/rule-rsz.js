@@ -1,18 +1,20 @@
 'use strict';
 
-const suffixes = [
-    'r',
-    's',
-    'z',
-];
-
 /*
  * DESCRIÇÃO:
  *   Pluralizar palavras terminada em /-r/, /-s/ ou /-z/.
  * REGRA:
  *   Acrescentar /-es/ ao final.
  */
-const handler = function (word) {
+
+const suffixes = [
+    'r',
+    's',
+    'z',
+];
+
+const handler = (word) => {
+
     /*
      * EXCEÇÃO:
      *   Se a palavra for uma oxítona terminada em /ês/, /és/ ou /ís/
@@ -21,9 +23,9 @@ const handler = function (word) {
     const RE_SPECIAL_OXYTONIC = /[êéí]s$/;
 
     if (RE_SPECIAL_OXYTONIC.test(word)) {
-        return word.replace(RE_SPECIAL_OXYTONIC, function (suffix) {
+        return word.replace(RE_SPECIAL_OXYTONIC, (suffix) => {
 
-            // Checar somente a vogal
+            // Checar somente a vogal.
             switch (suffix[0]) {
                 case 'ê':
                 case 'é':
@@ -38,10 +40,10 @@ const handler = function (word) {
      * EXCEÇÃO:
      *   Se a palavra terminar em /-s/ e NÃO for oxítona então ela não muda.
      */
-    const wordEndWithS = /s$/.test(word);
+    const wordEndsWithS = /s$/.test(word);
     const wordIsOxytonic = /[áãâêéí]s$/.test(word);
 
-    if (wordEndWithS && !wordIsOxytonic) {
+    if (wordEndsWithS && !wordIsOxytonic) {
         return word;
     }
 

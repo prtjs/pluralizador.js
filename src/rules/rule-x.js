@@ -1,20 +1,21 @@
 'use strict';
 
-const suffixes = [
-  'x',
-];
-
 /*
  * DESCRIÇÃO:
  *   Pluralizar palavras terminadas em /-x/.
  * REGRA:
- *   Nãa fazer alterações.
+ *   Não fazer alterações.
  */
-const handler = function (word) {
+
+const suffixes = [
+    'x',
+];
+
+const handler = (word) => {
     return word;
 }
 
 module.exports = {
-  suffixes,
-  handler,
+    suffixes,
+    handler,
 };

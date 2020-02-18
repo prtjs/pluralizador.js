@@ -1,8 +1,6 @@
 'use strict';
 
-const suffixes = [
-    'l',
-];
+const { RE_ACCENTS } = require('../constants');
 
 /*
  * DESCRIÇÃO:
@@ -10,23 +8,31 @@ const suffixes = [
  * REGRA:
  *   Trocar /-l/ por /-is/.
  */
-const handler = function (word) {
+
+const suffixes = [
+    'l',
+];
+
+// Lista de sete exceções de plural /-es/.
+const LIST_SETE_EXCECOES = [
+    'aval',
+    'cal',
+    'cônsul',
+    'fel',
+    'mal',
+    'mel',
+    'mol',
+];
+
+const handler = (word) => {
+
     /*
      * EXCEÇÃO:
      *   De acordo com a Wikipédia [1] há 'sete exceções' que fazem o plural /-es/.
-     * FONTE:
+     * FONTES:
      *   [1] https://pt.wikipedia.org/wiki/Plural#Regras_especiais
      */
-    const LIST_SETE_EXCECOES = [
-        'aval',
-        'cal',
-        'cônsul',
-        'fel',
-        'mal',
-        'mel',
-        'mol',
-    ];
-    if (LIST_SETE_EXCECOES.indexOf(word) !== -1) {
+    if (LIST_SETE_EXCECOES.includes(word)) {
         return word + 'es';
     }
 
@@ -36,10 +42,10 @@ const handler = function (word) {
      *   então esse sufixo será trocado por /-is/, caso contrário ele será
      *   trocado por /-eis/.
      * EXEMPLOS:
-     *   - fuzil  -> fuzis    [ oxítona ]
-     *   - fóssil -> fósseis  [ paroxítona ]
+     *   - fuzil  -> fuzis    [ OXÍTONA ]
+     *   - fóssil -> fósseis  [ PAROXÍTONA ]
      */
-    if (/il$/.test(word)) {
+    if (word.endsWith('il')) {
 
         // Se houver acentuação, então a palavra será automaticamente entendida
         // como NÃO sendo uma oxítona (ou monossílaba).
@@ -47,7 +53,7 @@ const handler = function (word) {
             return word.replace(/il$/, 'eis');
         }
 
-        return word.replaces(/l$/, 's');
+        return word.replace(/l$/, 's');
     }
 
     /*
