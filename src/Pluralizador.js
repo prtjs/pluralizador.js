@@ -8,7 +8,7 @@ class Pluralizer {
     /**
      * Adicionar configuração de pluralização.
      */
-    add(configuration) {
+    addRule(configuration) {
         let {suffixes, handler} = configuration;
         suffixes = Array.isArray(suffixes) ? suffixes : [];
         const hasSuffixes = suffixes.length > 0;
@@ -25,7 +25,9 @@ class Pluralizer {
     /**
      * Pluralizar plavra com base nas configurações.
      */
-    pluralize(noun) {
+    pluralize(noun, count) {
+        if (count < 2) return word;
+
         for (let configuration of this.configurations) {
             const match = configuration.suffixes.some((suffix) => {
                 return noun.endsWith(suffix);
