@@ -24,7 +24,7 @@ module.exports = class Pluralizer {
      * Pluralizar plavra com base nas configurações.
      */
     pluralize(noun) {
-        for (configuration of this.configurations) {
+        for (let configuration of this.configurations) {
             const match = configuration.suffixes.some((suffix) => {
                 return noun.endsWith(suffix);
             });
@@ -33,5 +33,7 @@ module.exports = class Pluralizer {
                 return configuration.handler(noun);
             }
         }
+
+        return word + 's';
     }
 }
