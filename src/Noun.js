@@ -4,7 +4,7 @@ const Pluralizer = require('./Pluralizador');
 
 class Noun {
     constructor() {
-        this.word = ''
+        this.word = undefined
         this.count = 1;
         this.pluralizer = new Pluralizer();
     }
@@ -33,8 +33,8 @@ class Noun {
     /**
      * Pluralizar palavra.
      */
-    pluralize(word) {
-        if (!word || typeof word !== 'string') return word;
+    pluralize() {
+        if (!this.word || typeof this.word !== 'string') return this.word;
 
         return this.pluralizer.pluralizeWord(this.word, this.count);
     }
