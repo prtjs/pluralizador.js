@@ -1,5 +1,5 @@
 const test = require('theuves-test');
-const pluralize = require('./');
+const pluralize = require('./src');
 
 test('Deve pluralizar palavras simples', (is) => {
   is(pluralize('carro'), 'carros');
