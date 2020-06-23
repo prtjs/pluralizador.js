@@ -6,46 +6,46 @@
  * Acrescentar -es no final.
  */
 
-import {regexAccents} from '../regexes'
+const {regexAccents} = require('../regexes')
 
-export const suffixes = [
+const suffixes = [
   'r',
   's',
   'z'
-];
+]
 
-export function handler(noun: string): string {
-  const isOxytonic = regexAccents.test(noun);
+function handler(noun) {
+  const isOxytonic = regexAccents.test(noun)
 
   /*
    * Se o substantivo for uma palavra oxítona terminada em
    * -ês, -és ou -ís ela deixará de sê-la e se tornará uma paroxítona.
    */
-  const regexSpecialOxytonic = /[êéí]s$/;
+  const regexSpecialOxytonic = /[êéí]s$/
 
   if (regexSpecialOxytonic.test(noun)) {
     return noun.replace(regexSpecialOxytonic, (suffix) => {
-      const suffixVowel = suffix[0];
+      const suffixVowel = suffix[0]
 
       switch (suffixVowel) {
         case 'ê':
         case 'é':
-          return 'eses';
+          return 'eses'
         case 'í':
-          return 'ises';
+          return 'ises'
       }
-    });
+    })
   }
 
   // Se terminar em -s e não for oxítona, nada muda
   if (isOxytonic && noun.endsWith('s')) {
-    return noun;
+    return noun
   }
 
-  return noun + 'es';
+  return noun + 'es'
 }
 
-export default {
+module.exports = {
   suffixes,
   handler
-};
+}

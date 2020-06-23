@@ -37,5 +37,5 @@ test('Deve pluralizar palavras terminadas em -ão', (is) => {
   is(pluralize('cidadão'), 'cidadãos');
   is(pluralize('grão'), 'grãos');
   is(pluralize('mão'), 'mãos');
-  is(pluralize('pães'), 'pães');
+  is(pluralize('pão'), 'pães');
 });

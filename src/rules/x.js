@@ -6,15 +6,15 @@
  * Não faz alterações.
  */
 
-export const suffixes = [
-  'x',
-];
+const suffixes = [
+  'x'
+]
 
-export function handler(word: string): string {
-  return word;
+function handler(word) {
+  return word
 }
 
-export default {
+module.exports = {
   suffixes,
   handler
-};
+}
