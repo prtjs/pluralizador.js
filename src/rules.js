@@ -47,10 +47,10 @@ module.exports = [
       const withoutL = noun.replace(/l$/, '')
 
       /*
-      * Lista de 'sete exceções' para plural com -es
-      *
-      * (Source: https://w.wiki/Uo$)
-      */
+       * Lista de 'sete exceções' para plural com -es
+       *
+       * (Source: https://w.wiki/Uo$)
+       */
       if (/(ava|ca|cônsu|fe|ma|me|mo)l$/.test(noun)) {
         return noun + 'es'
       }
