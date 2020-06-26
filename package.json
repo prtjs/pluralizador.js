@@ -10,5 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "theuves-test": "^1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "^8.0.1"
   }
 }
