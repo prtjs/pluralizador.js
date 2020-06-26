@@ -4,11 +4,11 @@
   "description": "Pluralize Portuguese nouns.",
   "main": "./index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^8.0.1"
   },
   "author": "Matheus Alves",
-  "license": "MIT",
-  "dependencies": {
-    "theuves-test": "^1.0.2"
-  }
+  "license": "MIT"
 }
