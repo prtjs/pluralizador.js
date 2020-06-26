@@ -3,14 +3,8 @@
   "version": "1.0.0",
   "description": "Pluralize Portuguese nouns.",
   "main": "./index.js",
-  "scripts": {
-    "test": "node test.js"
-  },
   "author": "Matheus Alves",
   "license": "MIT",
-  "dependencies": {
-    "theuves-test": "^1.0.2"
-  },
   "devDependencies": {
     "mocha": "^8.0.1"
   }
