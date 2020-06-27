@@ -4,7 +4,7 @@
 [![Licença MIT](https://img.shields.io/github/license/theuves/extenso.js)](https://github.com/theuves/pluralizador.js/blob/master/LICENSE)
 [![](https://img.shields.io/badge/doe--me-picpay-green?style=flat)](https://app.picpay.com/user/theuves)
 
-> Pluralize Portuguese nouns.
+> Pluralizador de substantivos.
 
 ## Instalação
 
