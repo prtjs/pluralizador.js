@@ -1,5 +1,5 @@
 const rules = require('./rules')
-const Pluralizer = require('./Pluralizer')
+const Pluralizer = require('./pluralizer')
 
 module.exports = function Pluralizador(noun, count = 2) {
   if (!noun) return
