@@ -1,5 +1,5 @@
 const assert = require('assert')
-const Pluralizer = require('../src/Pluralizer')
+const Pluralizer = require('../src/pluralizer')
 
 const pluralizer = new Pluralizer()
 
