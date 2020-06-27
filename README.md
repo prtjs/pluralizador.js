@@ -1,6 +1,8 @@
 # Pluralizador.js
 
-[![Status](https://travis-ci.org/theuves/pluralizador.js.svg?branch=master)](https://travis-ci.org/theuves/pluralizador.js)
+[![Status](https://travis-ci.org/theuves/pluralizador.js.svg?branch=main)](https://travis-ci.org/theuves/pluralizador.js)
+[![Licença MIT](https://img.shields.io/github/license/theuves/extenso.js)](https://github.com/theuves/pluralizador.js/blob/master/LICENSE)
+[![](https://img.shields.io/badge/doe--me-picpay-green?style=flat)](https://app.picpay.com/user/theuves)
 
 > Pluralize Portuguese nouns.
 
@@ -99,4 +101,4 @@ você conjugue verbos da língua portuguesa.
 
 ## Licença
 
-MIT &copy; Matheus Alves
+MIT &copy; Matheus Alves [e outros](https://github.com/theuves/pluralizador.js/graphs/contributors).
