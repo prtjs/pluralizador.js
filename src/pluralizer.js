@@ -1,5 +1,8 @@
 module.exports = class Pluralizer {
-  rules = []
+
+  constructor() {
+    this.rules = []
+  }
 
   addRule(rule) {
     this.rules.push(rule)
