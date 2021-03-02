@@ -1,6 +1,6 @@
 {
   "name": "pluralizador",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Pluralizador de substantivos.",
   "main": "./src/index.js",
   "scripts": {
