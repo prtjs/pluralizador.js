@@ -2,7 +2,7 @@
 
 [![Status](https://travis-ci.org/theuves/pluralizador.js.svg?branch=main)](https://travis-ci.org/theuves/pluralizador.js)
 [![Licença MIT](https://img.shields.io/github/license/theuves/extenso.js)](https://github.com/theuves/pluralizador.js/blob/master/LICENSE)
-[![](https://img.shields.io/badge/doe--me-picpay-green?style=flat)](https://app.picpay.com/user/theuves)
+[![](https://img.shields.io/badge/donate-PicPay-green?style=flat)](https://app.picpay.com/user/theuves)
 
 > Pluralizador de substantivos.
 
