@@ -7,7 +7,7 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "mocha": "^8.0.1"
+    "mocha": "^10.1.0"
   },
   "author": "Matheus Alves",
   "license": "MIT"
