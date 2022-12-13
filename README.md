@@ -6,6 +6,10 @@
 
 > Pluralizador de substantivos.
 
+***
+**Precisando de um desenvolvedor? Entre em contato: theuves@gmail.com**
+***
+
 ## Instalação
 
 Instale-o com *npm*:
